@@ -1,0 +1,8 @@
+create auser
+---
+- hosts: new
+  become: yes
+  gather_facts: false
+  tasks:
+   - name: create auser
+     user: name=vamsi uid=1301 group=b21a

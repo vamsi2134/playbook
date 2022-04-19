@@ -1,0 +1,8 @@
+create agroup
+---
+- hosts: new
+  become: yes
+  gather_facts: false
+  tasks:
+   - name: create agroup
+     group: name=b21a gid=1300 state=present
