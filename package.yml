@@ -1,0 +1,8 @@
+httpd package install:
+---
+- hosts: new
+  become: yes
+  gather_facts: false
+  tasks:
+   - name: httpd package install
+     package: name=httpd state=latest

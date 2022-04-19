@@ -1,0 +1,12 @@
+---
+- hosts: pr
+  become: yes
+  tasks:
+   - name: copy the patch script
+     copy: src="ospatch_15042022.sh" dest="/var/script1.sh"
+   - name: set permission
+     file: path=/var/script1.sh owner=root group=root mode=0755
+   - name: execute the script
+     shell: /bin/bash /var/script1.sh
+   - name: reboot the server
+     command: /sbin/reboot 

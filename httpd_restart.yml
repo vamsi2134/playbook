@@ -1,0 +1,8 @@
+service httpd restart
+---
+- hosts:new
+  become:yes
+  gather_facts: false
+  tasks:
+   - name: service httpd restart
+     service: name=httpd state=started
