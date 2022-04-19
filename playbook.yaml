@@ -1,0 +1,8 @@
+multimodule execution:
+---
+- hosts: new
+  become: yes
+  gather_facts: false
+  tasks:
+   - copy: src=/var/log/messages dest=/tmp/
+   - file: path=/tmp/testfile state=touch
